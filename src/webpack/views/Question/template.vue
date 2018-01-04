@@ -6,7 +6,10 @@
       <v-card-title>
         <v-list subheader>
           <v-subheader>対象文字列</v-subheader>
-          <v-list-tile v-for="sample in quiz.samples">
+          <v-list-tile
+            v-for="(sample, index) in quiz.samples"
+            :key="index"
+          >
             <v-list-tile-content>
               <v-list-tile-title>{{ sample }}</v-list-tile-title>
             </v-list-tile-content>
@@ -17,7 +20,10 @@
       <v-card-title>
         <v-list subheader>
           <v-subheader>抽出文字列</v-subheader>
-          <v-list-tile v-for="result in quiz.results">
+          <v-list-tile
+            v-for="(result, index) in quiz.results"
+            :key="index"
+          >
             <v-list-tile-content>
               <v-list-tile-title>{{ result }}</v-list-tile-title>
             </v-list-tile-content>
@@ -49,7 +55,10 @@
         <v-card-title>
           <v-list subheader>
             <v-subheader>回答例</v-subheader>
-            <v-list-tile v-for="example in quiz.examples">
+            <v-list-tile
+              v-for="(example, index) in quiz.examples"
+              :key="index"
+            >
               <v-list-tile-content>
                 <v-list-tile-title>{{ example }}</v-list-tile-title>
               </v-list-tile-content>
