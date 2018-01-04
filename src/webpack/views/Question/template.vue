@@ -1,5 +1,12 @@
 <template>
   <v-container>
+    <v-card class="mb-3" v-if="explanation !== null">
+      <v-card-text>
+        <div
+          class="Markdown"
+          v-html="explanation"></div>
+      </v-card-text>
+    </v-card>
     <v-card class="mb-3">
       <v-card-title>{{ quiz.question }}</v-card-title>
       <v-divider></v-divider>
@@ -60,7 +67,7 @@
               :key="index"
             >
               <v-list-tile-content>
-                <v-list-tile-title>{{ example }}</v-list-tile-title>
+                <v-list-tile-title><code>{{ example }}</code></v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -106,3 +113,8 @@
 </template>
 
 <script src="./script.js"></script>
+
+<style scoped>
+.Markdown {
+}
+</style>

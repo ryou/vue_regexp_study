@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import marked from 'marked';
 import QuestionManager from '../../libs/QuestionManager';
 
 export default {
@@ -10,6 +11,17 @@ export default {
       showErrorToast: false,
       hasNextQuestion: false,
     };
+  },
+  computed: {
+    explanation() {
+      let outValue;
+      if (typeof this.quiz.explanation !== 'undefined') {
+        outValue = marked(this.quiz.explanation);
+      } else {
+        outValue = null;
+      }
+      return outValue;
+    },
   },
   methods: {
     testRegExp() {

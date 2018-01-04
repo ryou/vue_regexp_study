@@ -38,7 +38,7 @@
 
 
 .slideleft-enter-active, .slideleft-leave-active {
-  transition: transform .4s, opacity .4s;
+  transition: transform .3s, opacity .3s;
 }
 .slideleft-leave {
   transform: translateX(0);
@@ -59,7 +59,7 @@
 
 
 .slideright-enter-active, .slideright-leave-active {
-  transition: transform .4s, opacity .4s;
+  transition: transform .3s, opacity .3s;
 }
 .slideright-leave {
   transform: translateX(0);
