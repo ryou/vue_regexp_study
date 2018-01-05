@@ -33,18 +33,15 @@
     </v-card>
 
     <v-card>
-      <v-card-title>
-        <v-text-field
-          label="解答"
-          v-model="inputValue"
-          required
-        ></v-text-field>
-        <v-btn
-          @click="testRegExp"
-        >
-          解答
-        </v-btn>
-      </v-card-title>
+      <v-card-text>
+        <v-form @submit.prevent="testRegExp">
+          <v-text-field
+            label="解答（Enterで確定）"
+            v-model="inputValue"
+            required
+          ></v-text-field>
+        </v-form>
+      </v-card-text>
     </v-card>
   </div>
 </template>
