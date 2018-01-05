@@ -6,6 +6,7 @@ import VueRouter from 'vue-router';
 import TopView from './views/Top/template.vue';
 import QuestionListView from './views/QuestionList/template.vue';
 import QuestionView from './views/Question/template.vue';
+import GameView from './views/Game/template.vue';
 
 Vue.use(VueRouter);
 
@@ -14,5 +15,6 @@ export default new VueRouter({
     { name: 'top', path: '/', component: TopView },
     { name: 'list', path: '/list/:category/', component: QuestionListView },
     { name: 'question', path: '/question/:category/:id/', component: QuestionView },
+    { name: 'game', path: '/game/', component: GameView },
   ],
 });

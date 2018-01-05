@@ -17,6 +17,15 @@
     <div class="text-xs-center">
       <v-btn color="primary" large>置換</v-btn>
     </div>
+    <div class="text-xs-center">
+      <v-btn
+        :to="{
+          name: 'game',
+        }"
+        color="primary"
+        large
+      >タイムアタック</v-btn>
+    </div>
   </v-container>
 </template>
 

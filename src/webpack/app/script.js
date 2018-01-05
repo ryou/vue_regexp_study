@@ -15,6 +15,7 @@ export default {
       const transitionMap = {
         top: {
           list: 'slideleft',
+          game: 'slideleft',
         },
         list: {
           top: 'slideright',
@@ -22,6 +23,9 @@ export default {
         },
         question: {
           list: 'slideright',
+        },
+        game: {
+          top: 'slideright',
         },
       };
 
