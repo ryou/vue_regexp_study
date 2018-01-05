@@ -9,6 +9,9 @@ export default {
     historyBack() {
       window.history.back();
     },
+    beforeEnter() {
+      window.scrollTo(0, 0);
+    },
   },
   watch: {
     $route(to, from) {
