@@ -45,6 +45,7 @@
           <v-text-field
             label="解答（Enterで確定）"
             v-model="inputValue"
+            autofocus
             required
           ></v-text-field>
         </v-form>
