@@ -1,43 +1,52 @@
 <template>
   <v-container>
-    <v-card class="mb-3" v-if="explanation !== null">
-      <v-card-text>
-        <div
-          class="Markdown"
-          v-html="explanation"></div>
-      </v-card-text>
-    </v-card>
-    <v-card class="mb-3">
-      <v-card-title>{{ quiz.question }}</v-card-title>
-      <v-divider></v-divider>
-      <v-card-title>
-        <v-list subheader>
-          <v-subheader>対象文字列</v-subheader>
-          <v-list-tile
-            v-for="(sample, index) in quiz.samples"
-            :key="index"
-          >
-            <v-list-tile-content>
-              <v-list-tile-title>{{ sample }}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-card-title>
-      <v-divider></v-divider>
-      <v-card-title>
-        <v-list subheader>
-          <v-subheader>抽出文字列</v-subheader>
-          <v-list-tile
-            v-for="(result, index) in quiz.results"
-            :key="index"
-          >
-            <v-list-tile-content>
-              <v-list-tile-title>{{ result }}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
-      </v-card-title>
-    </v-card>
+    <section-component
+      v-if="explanation !== null"
+      class="mb-5"
+    >
+      <template slot="title">解説</template>
+      <template slot="content">
+        <v-card-text>
+          <div
+            class="Markdown"
+            v-html="explanation"></div>
+        </v-card-text>
+      </template>
+    </section-component>
+    <section-component class="mb-3">
+      <template slot="title">練習問題</template>
+      <template slot="content">
+        <v-card-title>{{ quiz.question }}</v-card-title>
+        <v-divider></v-divider>
+        <v-card-title>
+          <v-list subheader>
+            <v-subheader>対象文字列</v-subheader>
+            <v-list-tile
+              v-for="(sample, index) in quiz.samples"
+              :key="index"
+            >
+              <v-list-tile-content>
+                <v-list-tile-title>{{ sample }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-card-title>
+        <v-divider></v-divider>
+        <v-card-title>
+          <v-list subheader>
+            <v-subheader>抽出文字列</v-subheader>
+            <v-list-tile
+              v-for="(result, index) in quiz.results"
+              :key="index"
+            >
+              <v-list-tile-content>
+                <v-list-tile-title>{{ result }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+        </v-card-title>
+      </template>
+    </section-component>
 
     <v-card>
       <v-card-text>

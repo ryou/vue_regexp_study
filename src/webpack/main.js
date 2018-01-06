@@ -4,6 +4,9 @@ import store from './store';
 import router from './router';
 
 import App from './app/template.vue';
+import SectionComponent from './components/Section/template.vue';
+
+Vue.component('section-component', SectionComponent);
 
 Vue.use(Vuetify);
 
