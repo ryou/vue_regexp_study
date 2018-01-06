@@ -7,7 +7,7 @@ export default {
     };
   },
   methods: {
-    beforeEnter() {
+    scrollToTop() {
       window.scrollTo(0, 0);
     },
     changeTitle(title) {

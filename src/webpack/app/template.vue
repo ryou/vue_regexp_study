@@ -13,7 +13,7 @@
       <v-toolbar-title>{{ headerTitle }}</v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <transition :name="transitionName" mode="out-in" @before-enter="beforeEnter">
+      <transition :name="transitionName" mode="out-in" @after-leave="scrollToTop">
         <!--
         vue-routerは、同一コンポーネントへの遷移の場合はコンポーネントを再利用する
         再利用されてしまうと、コンポーネントの各プロパティが引き継がれたり、
