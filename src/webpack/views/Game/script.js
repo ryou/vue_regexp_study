@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import titleMixin from '../../mixins/title';
 import questions from '../../data/game';
 import GameContentView from './GameContent/template.vue';
 import LoopController from '../../libs/LoopController';
@@ -37,8 +38,10 @@ const FRAME_SECOND = 1.0 / FPS;
 let loopController = null;
 
 export default {
+  mixins: [titleMixin],
   data() {
     return {
+      title: 'タイムアタック',
       quizList: [],
       currentView: null,
       showSuccessToast: false,

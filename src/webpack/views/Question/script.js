@@ -1,10 +1,13 @@
 import _ from 'lodash';
 import marked from 'marked';
+import titleMixin from '../../mixins/title';
 import QuestionManager from '../../libs/QuestionManager';
 
 export default {
+  mixins: [titleMixin],
   data() {
     return {
+      title: '',
       quiz: null,
       inputValue: '',
       isAnswered: false,
@@ -39,5 +42,6 @@ export default {
     const { category, id } = this.$route.params;
     this.quiz = QuestionManager.getQuestion(category, id);
     this.hasNextQuestion = QuestionManager.hasNextQuestion(category, id);
+    this.title = this.quiz.title;
   },
 };
