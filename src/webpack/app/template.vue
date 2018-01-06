@@ -2,8 +2,10 @@
   <v-app id="inspire">
     <v-toolbar color="indigo" dark fixed app>
       <v-btn
-        v-if="prevPageName !== null"
         :to="{ name: prevPageName }"
+        :style="{
+          visibility: (prevPageName !== null) ? 'visible' : 'hidden',
+        }"
         icon
       >
         <v-icon>arrow_back</v-icon>
