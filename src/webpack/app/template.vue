@@ -8,7 +8,7 @@
       >
         <v-icon>arrow_back</v-icon>
       </v-btn>
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>{{ headerTitle }}</v-toolbar-title>
     </v-toolbar>
     <v-content>
       <transition :name="transitionName" mode="out-in" @before-enter="beforeEnter">
@@ -20,7 +20,7 @@
         悪影響が起こる可能性を認識しつつ、keyを割り当てておく。
         http://kimulla.hatenablog.com/entry/2017/12/24/003639
         -->
-        <router-view :key="$route.fullPath"></router-view>
+        <router-view :key="$route.fullPath" @change-title="changeTitle"></router-view>
       </transition>
     </v-content>
     <v-footer color="indigo" app>

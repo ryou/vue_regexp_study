@@ -6,5 +6,7 @@ export default {
     } else {
       document.title = baseTitle;
     }
+
+    this.$emit('change-title', this.title);
   },
 };

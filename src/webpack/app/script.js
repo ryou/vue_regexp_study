@@ -1,6 +1,7 @@
 export default {
   data() {
     return {
+      headerTitle: '',
       drawer: false,
       transitionName: 'fade',
     };
@@ -8,6 +9,9 @@ export default {
   methods: {
     beforeEnter() {
       window.scrollTo(0, 0);
+    },
+    changeTitle(title) {
+      this.headerTitle = title;
     },
   },
   computed: {
