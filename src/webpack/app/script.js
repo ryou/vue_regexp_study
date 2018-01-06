@@ -6,11 +6,20 @@ export default {
     };
   },
   methods: {
-    historyBack() {
-      window.history.back();
-    },
     beforeEnter() {
       window.scrollTo(0, 0);
+    },
+  },
+  computed: {
+    prevPageName() {
+      const prevMap = {
+        top: null,
+        list: 'top',
+        question: 'list',
+        game: 'top',
+      };
+
+      return prevMap[this.$route.name];
     },
   },
   watch: {

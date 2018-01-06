@@ -1,7 +1,11 @@
 <template>
   <v-app id="inspire">
     <v-toolbar color="indigo" dark fixed app>
-      <v-btn icon @click="historyBack">
+      <v-btn
+        v-if="prevPageName !== null"
+        :to="{ name: prevPageName }"
+        icon
+      >
         <v-icon>arrow_back</v-icon>
       </v-btn>
       <v-toolbar-title>Application</v-toolbar-title>
