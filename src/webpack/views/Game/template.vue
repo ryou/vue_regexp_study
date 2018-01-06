@@ -1,6 +1,23 @@
 <template>
-  <v-container>
-    <p>{{ time | parseInt }}</p>
+  <v-container grid-list-md>
+    <v-layout class="mb-3">
+      <v-flex offset-xs6 xs3>
+        <v-card class="text-xs-center">
+          <v-card-text>残り</v-card-text>
+          <v-card-text>
+            {{ quizList.length + 1 }}問
+          </v-card-text>
+        </v-card>
+      </v-flex>
+      <v-flex xs3>
+        <v-card class="text-xs-center">
+          <v-card-text>TIME</v-card-text>
+          <v-card-text>
+            {{ time | parseInt }}
+          </v-card-text>
+        </v-card>
+      </v-flex>
+    </v-layout>
     <transition name="slideleft" mode="out-in">
       <component
         :is="currentView"
